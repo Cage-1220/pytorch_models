@@ -192,11 +192,9 @@ class DeepLabV3(nn.Module):
                  use_separable_conv=False):
         super(DeepLabV3, self).__init__()
         if 'resnet50' in backbone:
-            low_level_channels = 256
             features_channels = 2048
             self.backbone = resnet50(pretrained=pretrained)
         elif 'resnet101' in backbone:
-            low_level_channels = 256
             features_channels = 2048
             self.backbone = resnet101( pretrained=pretrained)
 
